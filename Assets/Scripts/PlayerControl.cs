@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {   
     #region Variables
+    private int count;
 
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -12,12 +14,14 @@ public class PlayerControl : MonoBehaviour
 
     public CharacterController controller;
     public Vector3 moveDirection = Vector3.zero;
+    
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        count = 0;
     }
 
     void FixedUpdate()
@@ -46,4 +50,22 @@ public class PlayerControl : MonoBehaviour
 
         controller.Move(moveDirection * Time.deltaTime);
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pickup"));
+        {
+            other.gameObject.SetActive(false);
+            FindObjectOfType<GameManager>().UpdateScore(1);
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            gameObject.SetActive(false);
+        }   
+    
+    }
+    
+
 }

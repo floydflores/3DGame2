@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3200788547875988360}
   - component: {fileID: 3200788547875988359}
   - component: {fileID: 8373152383880119532}
+  - component: {fileID: 4062989481208315269}
   m_Layer: 0
   m_Name: CubePL
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,8 +111,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb20940e9c754727b9c6635bd7ab1ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 10
-  gravity: 20
-  controller: {fileID: 0}
+  moveSpeed: 8
+  jumpForce: 14
+  gravity: 40
+  controller: {fileID: 4062989481208315269}
   moveDirection: {x: 0, y: 0, z: 0}
+--- !u!143 &4062989481208315269
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200788547875988358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
